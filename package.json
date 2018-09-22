@@ -1,0 +1,25 @@
+{
+  "name": "sb6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9003 -c .storybook"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.4.11",
+    "@storybook/addon-knobs": "^3.4.11",
+    "@storybook/addon-links": "^3.4.11",
+    "@storybook/addons": "^3.4.11",
+    "@storybook/polymer": "^3.4.11",
+    "babel-core": "^6.26.3"
+  },
+  "dependencies": {
+    "@polymer/polymer": "^3.0.5",
+    "@vaadin/vaadin-button": "^2.1.0",
+    "polymer-webpack-loader": "^2.0.3"
+  }
+}
