@@ -1,8 +1,8 @@
 import { storiesOf, addDecorator } from '@storybook/polymer';
 import '@vaadin/vaadin-button';
 // import { action } from '@storybook/addon-actions';
-// import { document } from 'global';
-// import { html } from 'lit-html';
+import { document } from 'global';
+import { html, render } from 'lit-html';
 
 import {
   withKnobs,
@@ -16,12 +16,6 @@ import {
   boolean,
 } from '@storybook/addon-knobs/polymer';
 
-// const label = 'Your Name';
-// const defaultValue = 'Arunoda Susiripala';
-// const groupId = 'GROUP-ID1';
-
-// const value = text(label, defaultValue, groupId);
-
 storiesOf('Addon|Knobs', module)
   .addDecorator(withKnobs)
   .add('simple', () => {
@@ -31,4 +25,11 @@ storiesOf('Addon|Knobs', module)
     // el.setAttribute('focus-ring', 'focus-ring');
     // button('callback', () => el.setAttribute('title', 'testing'));
     return el;
+  })
+.add('html string', () => '<div>Rendered with string</div>')
+  .add('lit', () => {
+    const title = text('Button title', 'Hello');
+    const root = document.createElement('div');
+    render(html`<vaadin-button>${text('Lit title', 'Hello')}</vaadin-button>`, root);
+    return root
   })
